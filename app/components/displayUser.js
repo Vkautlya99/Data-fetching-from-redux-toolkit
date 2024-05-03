@@ -1,12 +1,23 @@
+"use client"
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const DisplayUser = () => {
+  const userData = useSelector((data) => data.users)
+  console.log(userData)
   return (
-    <>
-      <div className="justify-center items-center text-center mt-10 mb-5 ml-96 flex border-50 h-52 w-[500px] box-border border shadow-lg p-14">
-              <h1>Display User</h1>
-          </div> 
-    </>
+
+    <div className="items-center justify-center mt-3 ml-96">
+      <h1>Users List</h1>
+      <br />
+      {
+        userData.map((item) => (
+          // eslint-disable-next-line react/jsx-key
+          <h2 className='bg-sky-300 w-[510px] p-1'>{item.name}</h2>
+        ))
+      }
+    </div>
+
   )
 }
 

@@ -1,7 +1,7 @@
 const { createSlice, nanoid } = require("@reduxjs/toolkit");
 
 const initialState = {
-    users : []
+    users: []
 }
 
 const Slice = createSlice({
